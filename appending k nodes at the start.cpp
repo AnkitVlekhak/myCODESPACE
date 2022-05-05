@@ -1,63 +1,6 @@
 #include <iostream>
 using namespace std;
-
-class node
-{
-public:
-    int data;
-    node *next;
-    node(int x)
-    {
-        data = x;
-        next = NULL;
-    }
-};
-
-void insert(node *&head1, int x)
-{
-    node *head = head1;
-    node *ptr = new node(x);
-    if (head1 == NULL)
-    {
-        head1 = ptr;
-        return;
-    }
-    while (head->next != NULL)
-    {
-        head = head->next;
-    }
-    head->next = ptr;
-}
-
-void deleteATtail(node *&head)
-{
-    node *temp = head;
-    while (temp->next->next != NULL)
-    {
-        temp = temp->next;
-    }
-    node *del = temp->next;
-    temp->next = NULL;
-    delete del;
-}
-
-void deleteAThead(node *&head)
-{
-    node *temp = head;
-    head = temp->next;
-    delete temp;
-}
-
-void print(node *head)
-{
-    while (head != NULL)
-    {
-        cout << head->data << "->";
-        head = head->next;
-    }
-    cout << "NULL" << endl;
-}
-
+///////////////////////////////////////////HERE COMES THE FUNCTION MADE FOR HANDLING LINKED LIST.///////////////////////////////////////
 int main()
 {
     node *h = NULL;
